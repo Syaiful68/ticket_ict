@@ -1,3 +1,9 @@
+<script setup>
+const props = defineProps({
+  data: Object,
+});
+</script>
+
 <template>
   <div class="card">
     <div class="card-header">
@@ -37,25 +43,25 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr v-for="(item, index) in data" :key="index">
             <td>
               <div class="d-flex px-2 py-1">
                 <div class="d-flex flex-column justify-content-center">
-                  <h6 class="mb-0 text-xs">DFG00009</h6>
+                  <h6 class="mb-0 text-xs">{{ item.code_ticket }}</h6>
                 </div>
               </div>
             </td>
             <td>
-              <p class="text-xs font-weight-bold mb-0">Orion</p>
+              <p class="text-xs font-weight-bold mb-0">{{ item.type }}</p>
             </td>
             <td class="align-middle text-center text-sm">
-              <p class="text-xs font-weight-bold mb-0">Hamdan</p>
+              <p class="text-xs font-weight-bold mb-0">{{ item.user_id }}</p>
             </td>
             <td class="align-middle text-center text-sm">
-              <span class="badge bg-gradient-success">Done</span>
+              <span class="badge bg-gradient-success">{{ item.status }}</span>
             </td>
             <td class="align-middle text-center">
-              <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
+              <span class="text-secondary text-xs font-weight-bold">{{ item.created_at }}</span>
             </td>
             <td class="align-middle">
               <a

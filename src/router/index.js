@@ -14,12 +14,12 @@ const router = createRouter({
       children: [
         {
           path: "",
-          name: "index",
+          name: "ticket.index",
           component: () => import("../views/Ticket/index.vue"),
         },
         {
           path: "detail/:id",
-          name: "detail",
+          name: "ticket.detail",
           component: () => import("../views/Ticket/detail.vue"),
         },
       ],
@@ -30,12 +30,12 @@ const router = createRouter({
       children: [
         {
           path: "",
-          name: "index",
+          name: "revisi.index",
           component: () => import("../views/Revisi/index.vue"),
         },
         {
           path: "detail/:id",
-          name: "detail",
+          name: "revisi.detail",
           component: () => import("../views/Revisi/detail.vue"),
         },
       ],

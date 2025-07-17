@@ -9,10 +9,11 @@ const getDatas = async () => {
   //
   Api.get("/tickets", {
     headers: {
-      Authorization: "Bearer " + localStorage.getItem("tokens"),
+      Authorization: "Bearer " + localStorage.getItem("token"),
     },
   })
     .then((res) => {
+      datas.value = res.data.data;
       console.log(res);
     })
     .catch((error) => {
@@ -29,7 +30,7 @@ onMounted(() => {
   <div class="container-fluid py-4">
     <div class="row">
       <div class="col-12">
-        <Tables></Tables>
+        <Tables :data="datas"></Tables>
       </div>
     </div>
   </div>
