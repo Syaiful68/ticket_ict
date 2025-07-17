@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-
 const props = defineProps({
   data: Object,
 });
@@ -66,14 +65,11 @@ const props = defineProps({
               <span class="text-secondary text-xs font-weight-bold">{{ item.created_at }}</span>
             </td>
             <td class="align-middle">
-              <a
-                href="javascript:;"
+              <router-link
+                :to="'/ticket/detail/' + item.code_ticket"
                 class="text-secondary font-weight-bold text-xs"
-                data-toggle="tooltip"
-                data-original-title="Edit user"
+                >Edit</router-link
               >
-                Edit
-              </a>
             </td>
           </tr>
         </tbody>
