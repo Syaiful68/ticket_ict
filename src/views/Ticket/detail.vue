@@ -11,6 +11,12 @@ const statusType = [
   { label: "Request", name: "request" },
   { label: "Delegation", name: "delegation" },
 ];
+const delegations = [
+  { label: "CCC", name: "CCC" },
+  { label: "CS", name: "CS" },
+  { label: "Inbound", name: "Inbound" },
+  { label: "Outbound", name: "Outbound" },
+];
 
 const getData = async () => {
   await Api.get("/tickets/" + route.params.id, {
@@ -35,6 +41,7 @@ const ticket = ref("");
 const formData = reactive({
   type: "",
   status: "",
+  delegation: "",
   handler: null,
   description: null,
   notes: null,
@@ -83,6 +90,15 @@ onMounted(() => {
                 <select v-model="formData.status" class="form-control">
                   <option value="">Choise</option>
                   <option v-for="(item, index) in statusType" :key="index" :value="item.name">
+                    {{ item.label }}
+                  </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Delegation</label>
+                <select v-model="formData.delegation" class="form-control">
+                  <option value="">Choise</option>
+                  <option v-for="(item, index) in delegations" :key="index" :value="item.name">
                     {{ item.label }}
                   </option>
                 </select>
