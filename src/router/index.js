@@ -4,6 +4,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: "/login",
+      name: "login",
+      component: () => import("../views/Authentication/login.vue"),
+    },
+    {
       path: "/ticket",
       name: "ticket",
       children: [
@@ -16,6 +21,22 @@ const router = createRouter({
           path: "detail/:id",
           name: "detail",
           component: () => import("../views/Ticket/detail.vue"),
+        },
+      ],
+    },
+    {
+      path: "/revisi",
+      name: "revisi",
+      children: [
+        {
+          path: "",
+          name: "index",
+          component: () => import("../views/Revisi/index.vue"),
+        },
+        {
+          path: "detail/:id",
+          name: "detail",
+          component: () => import("../views/Revisi/detail.vue"),
         },
       ],
     },

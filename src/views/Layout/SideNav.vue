@@ -1,7 +1,7 @@
 <script setup>
 import List from "../../components/ListMenu.vue";
 const Menus = [
-  { label: "Dashboard", icons: "fa-gauge-high", path: "/dashboard" },
+  { label: "Revisi", icons: "fa-gauge-high", path: "/revisi" },
   { label: "Tickets", icons: "fa-pen-to-square", path: "/ticket" },
 ];
 </script>
