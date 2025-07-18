@@ -9,13 +9,12 @@ const props = defineProps({
 
 <template>
   <li class="nav-item">
-    <router-link class="nav-link active" :to="path">
-      <div
-        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
-      >
+    <router-link class="nav-link" :class="{ active: $route.path.startsWith(path) }" :to="path">
+      <span class="nav-link-icon d-md-none d-lg-inline-block"
+        ><!-- Download SVG icon from http://tabler.io/icons/icon/home -->
         <i class="fa-solid" :class="icon"></i>
-      </div>
-      <span class="nav-link-text ms-1">{{ label }}</span>
+      </span>
+      <span class="nav-link-title"> {{ label }} </span>
     </router-link>
   </li>
 </template>

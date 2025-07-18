@@ -25,18 +25,18 @@ const router = createRouter({
       ],
     },
     {
-      path: "/revisi",
-      name: "revisi",
+      path: "/courier",
+      name: "courier",
       children: [
         {
           path: "",
-          name: "revisi.index",
-          component: () => import("../views/Revisi/index.vue"),
+          name: "courier.index",
+          component: () => import("../views/Courier/index.vue"),
         },
         {
           path: "detail/:id",
-          name: "revisi.detail",
-          component: () => import("../views/Revisi/detail.vue"),
+          name: "courier.detail",
+          component: () => import("../views/Courier/detail.vue"),
         },
       ],
     },

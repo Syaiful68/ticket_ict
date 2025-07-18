@@ -7,11 +7,13 @@ const props = defineProps({
 
 <template>
   <div class="card">
-    <div class="card-header">
+    <div class="card-body border-bottom py-3">
       <div class="d-flex">
-        <h6>Ticket List</h6>
-        <div class="justify-content-end ms-auto" style="width: 200px">
-          <input type="text" class="form-control" />
+        <div class="ms-auto text-secondary">
+          Search:
+          <div class="ms-2 d-inline-block">
+            <input type="text" class="form-control form-control-sm" aria-label="Search invoice" />
+          </div>
         </div>
       </div>
     </div>
@@ -23,7 +25,7 @@ const props = defineProps({
               Ticket
             </th>
             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-              Type
+              Categories
             </th>
             <th
               class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"

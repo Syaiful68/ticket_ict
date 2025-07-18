@@ -1,8 +1,8 @@
 <script setup>
 import List from "../../components/ListMenu.vue";
 const Menus = [
-  { label: "Revisi", icons: "fa-gauge-high", path: "/revisi" },
   { label: "Tickets", icons: "fa-pen-to-square", path: "/ticket" },
+  { label: "Courier", icons: "fa-gauge-high", path: "/courier" },
 ];
 </script>
 
@@ -47,60 +47,6 @@ const Menus = [
       </div>
       <!-- END NAVBAR LOGO -->
       <div class="navbar-nav flex-row d-lg-none">
-        <div class="nav-item d-none d-lg-flex me-3">
-          <div class="btn-list">
-            <a
-              href="https://github.com/tabler/tabler"
-              class="btn btn-5"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <!-- Download SVG icon from http://tabler.io/icons/icon/brand-github -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-2"
-              >
-                <path
-                  d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
-                />
-              </svg>
-              Source code
-            </a>
-            <a
-              href="https://github.com/sponsors/codecalm"
-              class="btn btn-6"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <!-- Download SVG icon from http://tabler.io/icons/icon/heart -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon text-pink icon-2"
-              >
-                <path
-                  d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
-                />
-              </svg>
-              Sponsor
-            </a>
-          </div>
-        </div>
         <div class="d-none d-lg-flex"></div>
         <div class="nav-item dropdown">
           <a
@@ -129,29 +75,13 @@ const Menus = [
       <div class="collapse navbar-collapse" id="sidebar-menu">
         <!-- BEGIN NAVBAR MENU -->
         <ul class="navbar-nav pt-lg-3">
-          <li class="nav-item">
-            <a class="nav-link" href="./">
-              <span class="nav-link-icon d-md-none d-lg-inline-block"
-                ><!-- Download SVG icon from http://tabler.io/icons/icon/home -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-1"
-                >
-                  <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-                  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg
-              ></span>
-              <span class="nav-link-title"> Home </span>
-            </a>
-          </li>
+          <List
+            v-for="(item, index) in Menus"
+            :key="index"
+            :label="item.label"
+            :icon="item.icons"
+            :path="item.path"
+          ></List>
         </ul>
         <!-- END NAVBAR MENU -->
       </div>
