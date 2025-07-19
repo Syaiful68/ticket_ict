@@ -6,11 +6,13 @@ const props = defineProps({
 
 <template>
   <div class="card">
-    <div class="card-header">
+    <div class="card-body border-bottom py-3">
       <div class="d-flex">
-        <h6>List Revisi</h6>
-        <div class="justify-content-end ms-auto" style="width: 200px">
-          <input type="text" class="form-control" />
+        <div class="ms-auto text-secondary">
+          Search:
+          <div class="ms-2 d-inline-block">
+            <input type="text" class="form-control form-control-sm" aria-label="Search invoice" />
+          </div>
         </div>
       </div>
     </div>
@@ -19,15 +21,15 @@ const props = defineProps({
         <thead>
           <tr>
             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-              Ticket
+              Couriers
             </th>
             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-              Type
+              Name
             </th>
             <th
               class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
             >
-              User
+              Zone
             </th>
             <th
               class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
@@ -37,12 +39,17 @@ const props = defineProps({
             <th
               class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
             >
+              Armada
+            </th>
+            <th
+              class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+            >
               Status
             </th>
             <th class="text-secondary opacity-7"></th>
           </tr>
         </thead>
-        <tbody>
+        <!-- <tbody>
           <tr v-for="(item, index) in data" :key="index">
             <td>
               <div class="d-flex px-2 py-1">
@@ -74,7 +81,7 @@ const props = defineProps({
               </a>
             </td>
           </tr>
-        </tbody>
+        </tbody> -->
       </table>
     </div>
     <div class="card-body">

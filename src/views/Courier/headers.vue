@@ -2,69 +2,51 @@
   <!-- BEGIN PAGE HEADER -->
   <div class="page-header d-print-none" aria-label="Page header">
     <div class="container-xl">
-      <div class="row g-2 align-items-center">
+      <div class="row align-items-center mw-100">
         <div class="col">
-          <!-- Page pre-title -->
-          <div class="page-pretitle">Overview</div>
-          <h2 class="page-title">Combo layout</h2>
-        </div>
-        <!-- Page title actions -->
-        <div class="col-auto ms-auto d-print-none">
-          <div class="btn-list">
-            <span class="d-none d-sm-inline">
-              <a href="#" class="btn btn-1"> New view </a>
-            </span>
-            <a
-              href="#"
-              class="btn btn-primary btn-5 d-none d-sm-inline-block"
-              data-bs-toggle="modal"
-              data-bs-target="#modal-report"
-            >
-              <!-- Download SVG icon from http://tabler.io/icons/icon/plus -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-2"
+          <div class="mb-1">
+            <ol class="breadcrumb" aria-label="breadcrumbs">
+              <li class="breadcrumb-item" :class="{ active: $route.path === '/courier' }">
+                <router-link to="/courier">Courier</router-link>
+              </li>
+              <li
+                class="breadcrumb-item"
+                aria-current="page"
+                v-if="$route.path === '/courier/create'"
+                :class="{ active: $route.path === '/courier/create' }"
               >
-                <path d="M12 5l0 14" />
-                <path d="M5 12l14 0" />
-              </svg>
-              Create new report
-            </a>
-            <a
-              href="#"
-              class="btn btn-primary btn-6 d-sm-none btn-icon"
-              data-bs-toggle="modal"
-              data-bs-target="#modal-report"
-              aria-label="Create new report"
-            >
-              <!-- Download SVG icon from http://tabler.io/icons/icon/plus -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-2"
+                <router-link to="/courier/create">Create</router-link>
+              </li>
+              <li
+                class="breadcrumb-item"
+                aria-current="page"
+                v-if="$route.path === '/courier/:id'"
+                :class="{ active: $route.path === '/courier/:id' }"
               >
-                <path d="M12 5l0 14" />
-                <path d="M5 12l14 0" />
-              </svg>
-            </a>
+                <router-link to="/courier/detail">Detail</router-link>
+              </li>
+            </ol>
           </div>
-          <!-- BEGIN MODAL -->
-          <!-- END MODAL -->
+        </div>
+        <div class="col-auto">
+          <div class="btn-list">
+            <router-link
+              v-if="$route.path !== '/courier'"
+              to="/courier"
+              class="btn d-none d-md-inline-flex"
+            >
+              <i class="fa-solid fa-long-arrow-alt-left me-2"></i>
+              Back
+            </router-link>
+            <router-link
+              v-if="$route.path === '/courier'"
+              to="/courier/create"
+              class="btn d-none d-md-inline-flex"
+            >
+              <i class="fa-solid fa-plus me-2"></i>
+              Create Courier
+            </router-link>
+          </div>
         </div>
       </div>
     </div>

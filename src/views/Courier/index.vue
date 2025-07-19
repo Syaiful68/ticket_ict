@@ -1,6 +1,7 @@
 <script setup>
 import Api from "@/utils/Api";
 import Tables from "./TableView.vue";
+import headers from "./headers.vue";
 import { onMounted, ref } from "vue";
 
 const datas = ref([]);
@@ -27,6 +28,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <headers></headers>
   <div class="container-fluid py-4">
     <div class="row">
       <div class="col-12">

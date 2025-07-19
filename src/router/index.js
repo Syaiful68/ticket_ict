@@ -34,6 +34,11 @@ const router = createRouter({
           component: () => import("../views/Courier/index.vue"),
         },
         {
+          path: "create",
+          name: "courier.create",
+          component: () => import("../views/Courier/create.vue"),
+        },
+        {
           path: "detail/:id",
           name: "courier.detail",
           component: () => import("../views/Courier/detail.vue"),

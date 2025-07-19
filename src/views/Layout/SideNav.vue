@@ -2,7 +2,7 @@
 import List from "../../components/ListMenu.vue";
 const Menus = [
   { label: "Tickets", icons: "fa-pen-to-square", path: "/ticket" },
-  { label: "Courier", icons: "fa-gauge-high", path: "/courier" },
+  { label: "Courier", icons: "fa-motorcycle", path: "/courier" },
 ];
 </script>
 
