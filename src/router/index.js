@@ -1,3 +1,4 @@
+import Api from "@/utils/Api";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -16,11 +17,17 @@ const router = createRouter({
           path: "",
           name: "ticket.index",
           component: () => import("../views/Ticket/index.vue"),
+          meta: {
+            requireAuth: true,
+          },
         },
         {
           path: "detail/:id",
           name: "ticket.detail",
           component: () => import("../views/Ticket/detail.vue"),
+          meta: {
+            requireAuth: true,
+          },
         },
       ],
     },
@@ -45,7 +52,16 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: "/report",
+      name: "report",
+      component: () => import("../views/ReportView.vue"),
+    },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  next();
 });
 
 export default router;

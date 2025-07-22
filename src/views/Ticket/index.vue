@@ -23,19 +23,16 @@ const getDatas = async () => {
       console.log(error);
     });
 };
-
 function toggleModal() {
   return (modalToggle.value = !modalToggle.value);
 }
-
 onMounted(() => {
   getDatas();
 });
 </script>
 
-<template>
+<!-- <template>
   <Headers @toggle="toggleModal"></Headers>
-
   <div class="page-body">
     <div class="container-xl">
       <div class="row row-deck row-cards">
@@ -47,4 +44,17 @@ onMounted(() => {
   </div>
 
   <Modals v-show="modalToggle" @toggle="toggleModal"></Modals>
+</template> -->
+
+<template>
+  <Headers @toggle="toggleModal"></Headers>
+  <div class="page-body">
+    <div class="container-xl">
+      <div class="row row-deck row-cards">
+        <div class="col">
+          <Tables :data="datas"></Tables>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

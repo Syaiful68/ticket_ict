@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from "vue";
 const props = defineProps({
   data: Object,
 });
@@ -61,7 +60,15 @@ const props = defineProps({
               <p class="text-xs font-weight-bold mb-0">{{ item.user_id }}</p>
             </td>
             <td class="align-middle text-center text-sm">
-              <span class="badge bg-gradient-success">{{ item.status }}</span>
+              <span class="badge bg-green text-green-fg" v-if="item.status === 'done'">Done</span>
+              <span class="badge bg-cyan text-cyan-fg" v-if="item.status === 'delegation'"
+                >Delegation</span
+              >
+              <span class="badge bg-yellow text-yellow-fg" v-if="item.status === 'request'"
+                >Request</span
+              >
+              <span class="badge bg-red text-red-fg" v-if="item.status === 'reject'">Reject</span>
+              <!-- <span class="badge bg-gradient-success">{{ item.status }}</span> -->
             </td>
             <td class="align-middle text-center">
               <span class="text-secondary text-xs font-weight-bold">{{ item.created_at }}</span>

@@ -17,10 +17,23 @@
         </div>
         <div class="col-auto">
           <div class="btn-list">
-            <button type="button" class="btn d-none d-md-inline-flex" @click="$emit('toggle')">
+            <button
+              type="button"
+              class="btn d-none d-md-inline-flex"
+              @click="$emit('toggle')"
+              v-if="$route.path === '/ticket'"
+            >
               <i class="fa-solid fa-plus me-2"></i>
               Add New
             </button>
+            <router-link
+              to="/ticket"
+              class="btn d-none d-md-inline-flex"
+              v-if="$route.path !== '/ticket'"
+            >
+              <i class="fa-solid fa-arrow-left me-2"></i>
+              Back
+            </router-link>
           </div>
         </div>
       </div>

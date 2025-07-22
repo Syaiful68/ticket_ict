@@ -1,14 +1,14 @@
 <script setup>
 import Api from "@/utils/Api";
 import Tables from "./TableView.vue";
-import headers from "./headers.vue";
+import Headers from "./headers.vue";
 import { onMounted, ref } from "vue";
 
 const datas = ref([]);
 
 const getDatas = async () => {
   //
-  Api.get("/revisi", {
+  Api.get("/courier", {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("token"),
     },
@@ -27,12 +27,25 @@ onMounted(() => {
 });
 </script>
 
-<template>
+<!-- <template>
   <headers></headers>
   <div class="container-fluid py-4">
     <div class="row">
       <div class="col-12">
         <Tables :data="datas"></Tables>
+      </div>
+    </div>
+  </div>
+</template> -->
+
+<template>
+  <Headers></Headers>
+  <div class="page-body">
+    <div class="container-xl">
+      <div class="row row-deck row-cards">
+        <div class="col">
+          <Tables :data="datas"></Tables>
+        </div>
       </div>
     </div>
   </div>

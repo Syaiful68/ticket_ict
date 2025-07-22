@@ -3,6 +3,7 @@ import List from "../../components/ListMenu.vue";
 const Menus = [
   { label: "Tickets", icons: "fa-pen-to-square", path: "/ticket" },
   { label: "Courier", icons: "fa-motorcycle", path: "/courier" },
+  { label: "Report", icons: "fa-clipboard-check", path: "/report" },
 ];
 </script>
 

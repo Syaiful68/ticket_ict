@@ -8,7 +8,7 @@ const datas = ref([]);
 
 const getDatas = async () => {
   //
-  Api.get("/revisi", {
+  Api.get("/courier", {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("token"),
     },
